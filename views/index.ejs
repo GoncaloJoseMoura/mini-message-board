@@ -2,10 +2,22 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    <div>
+      <ul>
+        <% messages.forEach(value => { %>
+        <li>
+          <p><%= value.user %></p>
+          <p><%= value.text %></p>
+          <p><%= value.added %></p>
+        </li>
+        <% }) %>
+      </ul>
+      <a href="/new">Send a message</a>
+    </div>
   </body>
 </html>
